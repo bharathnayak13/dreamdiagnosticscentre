@@ -12,20 +12,47 @@
       margin: 0;
       padding: 0;
     }
-    header h1 {
-  color: white;
-  font-size: 28px;
-  margin: 0;
-}
-
 
     header {
       background-color: #004080;
       color: white;
-      padding: 20px;
-      text-align: center;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
     }
-    
+
+    .logo-title {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-title img {
+      height: 100px;
+      margin-right: 15px;
+    }
+
+    .logo-title h1 {
+      font-size: 28px;
+      margin: 0;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 12px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
 
     .container {
       max-width: 1200px;
@@ -82,19 +109,24 @@
   </style>
 </head>
 <body>
- <header>
-  <h1>Dream Diagnostics Center</h1>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About Us</a>
-    <a href="packages.html">Health Packages</a>
-    <a href="services.html">Our Services</a>
-    <a href="contact.html">Contact Us</a>
-  </nav>
-</header>
 
+  <header>
+    <div class="logo-title">
+      <img src="d.jpg" alt="Dream Diagnostics Logo" />
+      <h1>Dream Diagnostics Center</h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="packages.html">Health Packages</a>
+      <a href="services.html">Our Services</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </header>
 
   <div class="container">
+    <h1>Our Health Packages</h1>
+
     <div class="package">
       <h2>Harsha Silver Package</h2>
       <ul>
@@ -140,12 +172,11 @@
       </ul>
       <button>Book Now</button>
     </div>
-
-    <!-- Add more packages below in same format -->
   </div>
 
   <footer>
     <p>&copy; 2025 Dream Diagnostics Center | Mangalore</p>
   </footer>
+
 </body>
 </html>
