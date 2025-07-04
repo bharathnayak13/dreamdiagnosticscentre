@@ -6,9 +6,74 @@
   <meta name="google-site-verification" content="k9Y-gOiTDTx-9MCI7zMsh5HVzFbZv7WKSpqZLcMRhgs" />
   <title>Dream Diagnostics Center</title>
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #004080;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    #hero {
+      text-align: center;
+      padding: 100px 20px;
+      background: linear-gradient(to right, #004080, #007bff);
+      color: white;
+    }
+
+    #hero h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      padding: 12px 30px;
+      font-size: 18px;
+      color: white;
+      background-color: #ff6600;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background-color: #cc5200;
+    }
+
+    footer {
+      background-color: #004080;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 60px;
+    }
+  </style>
 </head>
 <body>
-  <header>
+
+<header>
   <h1>Dream Diagnostics Center</h1>
   <nav>
     <a href="index.html">Home</a>
@@ -19,57 +84,14 @@
   </nav>
 </header>
 
-
-  <section id="hero">
-    <h2>Your Health, Our Priority</h2>
-    <a href="#contact" class="btn">Book Now</a>
-  </section>
-
-  
-
-
-  <section id="services">
-    <h2>Our Services</h2>
-    <ul>
-      <li>Blood Tests</li>
-      <li>ECG, TMT, ECHO</li>
-      <li>Digital X-Ray</li>
-      <li>Ultrasound, Spirometry</li>
-    </ul>
-  </section>
-
-  <section id="packages">
-    <h2>Health Packages</h2>
-    <p>Silver, Gold, Diabetic, Women’s Health, Executive, etc.</p>
-  </section>
-
-  <section id="contact">
-  <h2>Book an Appointment</h2>
-  <form action="https://formspree.io/f/manjkzqy" method="POST">
-    <input type="text" name="name" placeholder="Name" required />
-
-    <input type="email" name="email" placeholder="Email Address" required />
-
-    <input type="tel" name="phone" placeholder="Phone" required />
-
-    <select name="appointment" required>
-      <option value="" disabled selected>Please select an appointment</option>
-      <option value="General Checkup">General Checkup</option>
-      <option value="Blood Test">Blood Test</option>
-      <option value="ECG">ECG</option>
-      <option value="Ultrasound">Ultrasound</option>
-      <option value="X-Ray">X-Ray</option>
-    </select>
-
-    <textarea name="message" placeholder="Message (Optional)"></textarea>
-
-    <button type="submit">Submit</button>
-  </form>
+<section id="hero">
+  <h2>Your Health, Our Priority</h2>
+  <a href="contact.html" class="btn">Book Now</a>
 </section>
 
+<footer>
+  <p>© 2025 Dream Diagnostics Center | Mangalore</p>
+</footer>
 
-  <footer>
-    <p>© 2025 Neo Health Diagnostics | Mangalore</p>
-  </footer>
 </body>
 </html>
