@@ -6,22 +6,6 @@
   <title>Contact Us - Dream Diagnostics</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
-    nav {
-  margin-top: 10px;
-}
-
-nav a {
-  color: white;
-  margin: 0 15px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 16px;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
     body {
       font-family: Arial, sans-serif;
       background: #f7f7f7;
@@ -31,15 +15,43 @@ nav a:hover {
     header {
       background-color: #004080;
       color: white;
-      padding: 20px;
-      text-align: center;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
     }
-    header h1 {
-  color: white;
-  font-size: 28px;
-  margin: 0;
-}
 
+    .logo-title {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-title img {
+      height: 100px;
+      margin-right: 15px;
+    }
+
+    .logo-title h1 {
+      font-size: 28px;
+      margin: 0;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 12px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
 
     .container {
       max-width: 1000px;
@@ -47,10 +59,9 @@ nav a:hover {
       padding: 0 20px;
     }
 
-    h1 {
+    h1, h2 {
       text-align: center;
       color: #004080;
-      margin-bottom: 30px;
     }
 
     .contact-info {
@@ -60,13 +71,7 @@ nav a:hover {
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       margin-bottom: 30px;
     }
-    iframe {
-  width: 100%;
-  height: 400px;
-  border: none;
-  border-radius: 10px;
-}
-    
+
     .contact-info p {
       margin: 10px 0;
       color: #333;
@@ -94,50 +99,50 @@ nav a:hover {
 </head>
 <body>
 
-<header>
-  <h1>Dream Diagnostics Center</h1>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About Us</a>
-    <a href="packages.html">Health Packages</a>
-    <a href="services.html">Our Services</a>
-    <a href="contact.html">Contact Us</a>
-  </nav>
-</header>
-
-<div class="container">
-
-  <div class="contact-info">
-    <h2>Headquarters</h2>
-    <p><strong>Phone:</strong> 0824-3501120 / +91-9380612704</p>
-    <p><strong>Email:</strong> info@harshadiagnostics.com</p>
-    <p><strong>Address:</strong> D.No. 2-15-1328/7, Kapikad-Anegundi Road, Bejai-Kapikad, Next to Marian Garden, Mangalore - 575 004</p>
-    
-    <div class="hours">
-      <h3>Working Hours</h3>
-      <p>Monday to Saturday: 6:30 am – 7:30 pm</p>
-      <p>Sunday: 6:30 am – 5:00 pm</p>
+  <header>
+    <div class="logo-title">
+      <img src="d.jpg" alt="Dream Diagnostics Logo" />
+      <h1>Dream Diagnostics Center</h1>
     </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="packages.html">Health Packages</a>
+      <a href="services.html">Our Services</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </header>
+
+  <div class="container">
+
+    <div class="contact-info">
+      <h2>Headquarters</h2>
+      <p><strong>Phone:</strong> 0824-3501120 / +91-9380612704</p>
+      <p><strong>Email:</strong> info@harshadiagnostics.com</p>
+      <p><strong>Address:</strong> D.No. 2-15-1328/7, Kapikad-Anegundi Road, Bejai-Kapikad, Next to Marian Garden, Mangalore - 575 004</p>
+      
+      <div class="hours">
+        <h3>Working Hours</h3>
+        <p>Monday to Saturday: 6:30 am – 7:30 pm</p>
+        <p>Sunday: 6:30 am – 5:00 pm</p>
+      </div>
+    </div>
+
+    <div class="contact-info">
+      <h2>Find Us on the Map</h2>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3884.490751305902!2d74.99200127512665!3d13.194476787141713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbb57c775ee14f3%3A0xfe08acd012da8f0b!2sDream%20Diagnostic%20Centre!5e0!3m2!1sen!2sin!4v1751618827060!5m2!1sen!2sin"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
   </div>
 
-  <div class="contact-info">
-  <h2>Find Us on the Map</h2>
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3884.490751305902!2d74.99200127512665!3d13.194476787141713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbb57c775ee14f3%3A0xfe08acd012da8f0b!2sDream%20Diagnostic%20Centre!5e0!3m2!1sen!2sin!4v1751618827060!5m2!1sen!2sin"
-    style="width: 100%; height: 400px; border: 0; border-radius: 10px;"
-    allowfullscreen=""
-    loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade">
-  </iframe>
-</div>
-
-
-
-</div>
-
-<footer>
-  <p>&copy; 2025 Dream Diagnostics Center | Mangalore</p>
-</footer>
+  <footer>
+    <p>&copy; 2025 Dream Diagnostics Center | Mangalore</p>
+  </footer>
 
 </body>
 </html>
