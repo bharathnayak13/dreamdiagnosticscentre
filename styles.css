@@ -54,3 +54,56 @@ button {
   padding: 12px;
   cursor: pointer;
 }
+/* ===== ABOUT SECTION ===== */
+#about {
+  background-color: #f9f9f9;
+  padding: 40px 20px;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+#about h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+#about h3 {
+  font-size: 1.4rem;
+  color: #0066cc;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+#about p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 15px auto;
+}
+
+#about ul {
+  max-width: 800px;
+  margin: 20px auto;
+  padding-left: 20px;
+  list-style: none;
+}
+
+#about ul li {
+  background-color: #ffffff;
+  margin-bottom: 10px;
+  padding: 15px;
+  border-left: 4px solid #0066cc;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  color: #333;
+  font-size: 0.95rem;
+}
+
+#about ul li strong {
+  display: block;
+  color: #000;
+  margin-bottom: 4px;
+}
