@@ -15,23 +15,26 @@
     header {
       background-color: #004080;
       color: white;
-      padding: 20px;
+      padding: 15px 20px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       flex-wrap: wrap;
     }
 
-   header img {
-  height: 80px;
-}
+    .logo-title {
+      display: flex;
+      align-items: center;
+    }
 
+    .logo-title img {
+      height: 100px;
+      margin-right: 15px;
+    }
 
-    header h1 {
-      font-size: 24px;
+    .logo-title h1 {
+      font-size: 28px;
       margin: 0;
-      margin-left: 10px;
-      display: inline-block;
     }
 
     nav {
@@ -40,7 +43,7 @@
 
     nav a {
       color: white;
-      margin: 0 15px;
+      margin: 0 12px;
       text-decoration: none;
       font-weight: bold;
       font-size: 16px;
@@ -92,7 +95,7 @@
 <body>
 
   <header>
-    <div style="display: flex; align-items: center;">
+    <div class="logo-title">
       <img src="logo.png" alt="Dream Diagnostics Logo" />
       <h1>Dream Diagnostics Center</h1>
     </div>
