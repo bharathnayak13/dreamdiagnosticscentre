@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="google-site-verification" content="k9Y-gOiTDTx-9MCI7zMsh5HVzFbZv7WKSpqZLcMRhgs" />
   <title>Dream Diagnostics Center</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
@@ -17,19 +16,21 @@
       background-color: #004080;
       color: white;
       padding: 20px;
-      text-align: center;
-    }
-
-    .logo-container {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 15px;
+      justify-content: space-between;
+      flex-wrap: wrap;
     }
 
-    .logo {
-      height: 50px;
-      width: auto;
+    header img {
+      height: 60px;
+    }
+
+    header h1 {
+      font-size: 24px;
+      margin: 0;
+      margin-left: 10px;
+      display: inline-block;
     }
 
     nav {
@@ -41,6 +42,7 @@
       margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
+      font-size: 16px;
     }
 
     nav a:hover {
@@ -48,14 +50,14 @@
     }
 
     #hero {
+      background-color: #e6f0ff;
       text-align: center;
-      padding: 100px 20px;
-      background: linear-gradient(to right, #004080, #007bff);
-      color: white;
+      padding: 80px 20px;
     }
 
     #hero h2 {
       font-size: 36px;
+      color: #004080;
       margin-bottom: 20px;
     }
 
@@ -68,6 +70,9 @@
       border-radius: 6px;
       text-decoration: none;
       font-weight: bold;
+      cursor: pointer;
+      display: inline-block;
+      transition: background-color 0.3s ease;
     }
 
     .btn:hover {
@@ -79,34 +84,34 @@
       color: white;
       text-align: center;
       padding: 20px;
-      margin-top: 60px;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
 
-<header>
-  <div class="logo-container">
-    <img src="d.jpg" alt="Dream Diagnostics Logo" class="logo">
-    <h1>Dream Diagnostics Center</h1>
-  </div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About Us</a>
-    <a href="packages.html">Health Packages</a>
-    <a href="services.html">Our Services</a>
-    <a href="contact.html">Contact Us</a>
-  </nav>
-</header>
+  <header>
+    <div style="display: flex; align-items: center;">
+      <img src="logo.png" alt="Dream Diagnostics Logo" />
+      <h1>Dream Diagnostics Center</h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="packages.html">Health Packages</a>
+      <a href="services.html">Our Services</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </header>
 
-<section id="hero">
-  <h2>Your Health, Our Priority</h2>
-  <a href="appointment.html" class="btn">Book Appointment</a>
-</section>
+  <section id="hero">
+    <h2>Your Health, Our Priority</h2>
+    <a href="appointment.html" class="btn">Book Appointment</a>
+  </section>
 
-<footer>
-  <p>© 2025 Dream Diagnostics Center | Mangalore</p>
-</footer>
+  <footer>
+    <p>© 2025 Dream Diagnostics Center | Mangalore</p>
+  </footer>
 
 </body>
 </html>
