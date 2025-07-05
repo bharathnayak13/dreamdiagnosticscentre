@@ -67,36 +67,52 @@
       margin-bottom: 30px;
     }
 
+    .packages-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
     .package {
-      background-color: #fff;
+      background-color: white;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       padding: 20px;
-      margin-bottom: 30px;
+      width: 100%;
+      box-sizing: border-box;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .package:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
     }
 
     .package h2 {
       color: #004080;
       margin-bottom: 10px;
+      font-size: 20px;
     }
 
     .package ul {
       list-style-type: disc;
       padding-left: 20px;
+      margin-top: 10px;
+      margin-bottom: 15px;
       color: #444;
     }
 
-    .package button {
+    .package a button {
       background-color: #007bff;
       color: white;
       border: none;
       padding: 10px 20px;
-      margin-top: 15px;
       border-radius: 5px;
       cursor: pointer;
+      font-weight: bold;
     }
 
-    .package button:hover {
+    .package a button:hover {
       background-color: #0056b3;
     }
 
@@ -127,108 +143,217 @@
 
   <div class="container">
     <h1>Our Health Packages</h1>
+    <div class="packages-grid">
+      <!-- Packages will be inserted below this comment -->
+      <!-- Auto-generated full package list from Diabetic to Women Health Care will appear here -->
+      <!-- START INSERTED PACKAGES -->
+      <div class="package">
+        <h2>DIABETIC PROFILE (5 TESTS) @ ₹680</h2>
+        <ul>
+          <li>FASTING BLOOD SUGAR (FBS)</li>
+          <li>HbA1c (GLYCOSYLATED HAEMOGLOBIN)</li>
+          <li>RENAL FUNCTION TEST (RFT)</li>
+          <li>POST PRANDIAL BLOOD SUGAR (PPBS)</li>
+        </ul>
+        <a href="appointment.html?package=Diabetic+Profile"><button>Book Now</button></a>
+      </div>
+      <!-- START INSERTED PACKAGES -->
+<div class="package">
+  <h2>DIABETIC PROFILE (5 TESTS) @ ₹680</h2>
+  <ul>
+    <li>FASTING BLOOD SUGAR (FBS)</li>
+    <li>HbA1c (GLYCOSYLATED HAEMOGLOBIN)</li>
+    <li>RENAL FUNCTION TEST (RFT)</li>
+    <li>POST PRANDIAL BLOOD SUGAR (PPBS)</li>
+  </ul>
+  <a href="appointment.html?package=Diabetic+Profile"><button>Book Now</button></a>
+</div>
 
-    <div class="package">
-      <h2>Executive Health Package (89 Tests) – ₹2300</h2>
-      <ul>
-        <li>Blood Urea Nitrogen (BUN)</li>
-        <li>Estimated Glomerular Filtration Rate (eGFR)</li>
-        <li>Fasting Blood Sugar (FBS)</li>
-        <li>HbA1c (Glycosylated Haemoglobin)</li>
-        <li>Iron Profile</li>
-        <li>Lipid Profile Test (LPT)</li>
-        <li>Liver Function Test (LFT)</li>
-        <li>Renal Function Test (RFT)</li>
-        <li>Serum Calcium</li>
-        <li>Serum Electrolytes</li>
-        <li>Serum Phosphorus</li>
-        <li>Complete Urine Analysis</li>
-        <li>Complete Blood Count (CBC)</li>
-        <li>CA-125</li>
-        <li>PSA</li>
-        <li>Thyroid Profile (T3, T4, TSH)</li>
-        <li>Vitamin B-12</li>
-        <li>Vitamin D3</li>
-      </ul>
-      <a href="appointment.html?package=Executive Health Package">
-  <button>Book Now</button>
-</a>
+<div class="package">
+  <h2>MINI HEALTH PACKAGE (61 TESTS) @ ₹750</h2>
+  <ul>
+    <li>BLOOD UREA NITROGEN (BUN)</li>
+    <li>ESTIMATED GLOMERULAR FILTRATION RATE (eGFR)</li>
+    <li>FASTING BLOOD SUGAR (FBS)</li>
+    <li>LIPID PROFILE TEST (LPT)</li>
+    <li>RENAL FUNCTION TEST (RFT)</li>
+    <li>COMPLETE URINE ANALYSIS</li>
+    <li>COMPLETE BLOOD COUNT (CBC)</li>
+  </ul>
+  <a href="appointment.html?package=Mini+Health+Package"><button>Book Now</button></a>
+</div>
 
-    </div>
+<div class="package">
+  <h2>ALLERGY PROFILE (20 TESTS) @ ₹950</h2>
+  <ul>
+    <li>ABSOLUTE EOSINOPHIL COUNT (AEC)</li>
+    <li>COMPLETE BLOOD COUNT WITH ESR (CBC WITH ESR)</li>
+    <li>IgE LEVEL</li>
+  </ul>
+  <a href="appointment.html?package=Allergy+Profile"><button>Book Now</button></a>
+</div>
 
-    <div class="package">
-      <h2>Senior Citizen Health Package – ₹2500</h2>
-      <ul>
-        <li>Fasting Blood Sugar (FBS)</li>
-        <li>HbA1c (Glycosylated Haemoglobin)</li>
-        <li>Lipid Profile Test (LPT)</li>
-        <li>Liver Function Test (LFT)</li>
-        <li>Renal Function Test (RFT)</li>
-        <li>Serum Calcium</li>
-        <li>Serum Potassium (K+)</li>
-        <li>Serum Sodium (Na+)</li>
-        <li>Blood Pressure (BP)</li>
-        <li>ECG (Electrocardiogram)</li>
-        <li>Complete Urine Analysis</li>
-        <li>Complete Blood Count (CBC)</li>
-        <li>TSH</li>
-      </ul>
-      <button>Book Now</button>
-    </div>
+<div class="package">
+  <h2>KIDNEY HEALTH PROFILE (9 TESTS) @ ₹1100</h2>
+  <ul>
+    <li>BLOOD UREA</li>
+    <li>BLOOD UREA NITROGEN (BUN)</li>
+    <li>ESTIMATED GLOMERULAR FILTRATION RATE (eGFR)</li>
+    <li>SERUM CALCIUM</li>
+    <li>SERUM CREATININE</li>
+    <li>SERUM PHOSPHORUS</li>
+    <li>SERUM POTASSIUM (K+)</li>
+    <li>SERUM SODIUM (Na+)</li>
+    <li>SERUM URIC ACID</li>
+  </ul>
+  <a href="appointment.html?package=Kidney+Health+Profile"><button>Book Now</button></a>
+</div>
 
-    <div class="package">
-      <h2>Comprehensive Health Package (96 Tests) – ₹2800</h2>
-      <ul>
-        <li>Blood Urea Nitrogen (BUN)</li>
-        <li>Estimated Glomerular Filtration Rate (eGFR)</li>
-        <li>Fasting Blood Sugar (FBS)</li>
-        <li>HbA1c (Glycosylated Haemoglobin)</li>
-        <li>Iron Profile</li>
-        <li>Lipase</li>
-        <li>Lipid Profile Test (LPT)</li>
-        <li>Liver Function Test (LFT)</li>
-        <li>Renal Function Test (RFT)</li>
-        <li>Serum Amylase</li>
-        <li>Serum Calcium</li>
-        <li>Serum Electrolytes</li>
-        <li>Serum Phosphorus</li>
-        <li>Complete Urine Analysis</li>
-        <li>Complete Blood Count (CBC)</li>
-        <li>High Sensitive CRP (hsCRP)</li>
-        <li>CA-125</li>
-        <li>PSA</li>
-        <li>Thyroid Profile (T3, T4, TSH)</li>
-        <li>Vitamin B-12</li>
-        <li>Vitamin D3</li>
-        <li>Apolipoprotein-A1 (Apo-A1)</li>
-        <li>Apolipoprotein-B (Apo-B)</li>
-        <li>Lipoprotein-a (Lp-a)</li>
-      </ul>
-      <button>Book Now</button>
-    </div>
+<div class="package">
+  <h2>FEVER PROFILE (36 TESTS) @ ₹1200</h2>
+  <ul>
+    <li>URINE ROUTINE</li>
+    <li>COMPLETE BLOOD COUNT WITH ESR (CBC WITH ESR)</li>
+    <li>DENGUE PROFILE (IgG, IgM & Ns1Ag)</li>
+    <li>MALARIAL PARASITE (CARD TEST)</li>
+    <li>C-REACTIVE PROTEIN (CRP)</li>
+    <li>WIDAL SLIDE</li>
+  </ul>
+  <a href="appointment.html?package=Fever+Profile"><button>Book Now</button></a>
+</div>
 
-    <div class="package">
-      <h2>Women Health Care Package – ₹3100</h2>
-      <ul>
-        <li>Fasting Blood Sugar (FBS)</li>
-        <li>HbA1c (Glycosylated Haemoglobin)</li>
-        <li>Lipid Profile Test (LPT)</li>
-        <li>Liver Function Test (LFT)</li>
-        <li>Renal Function Test (RFT)</li>
-        <li>Serum Calcium</li>
-        <li>Blood Pressure (BP)</li>
-        <li>ECG (Electrocardiogram)</li>
-        <li>Complete Urine Analysis</li>
-        <li>Complete Blood Count (CBC)</li>
-        <li>CA-125</li>
-        <li>Thyroid Profile (T3, T4, TSH)</li>
-      </ul>
-      <button>Book Now</button>
+<div class="package">
+  <h2>BASIC HEALTH PACKAGE (79 TESTS) @ ₹1200</h2>
+  <ul>
+    <li>BLOOD UREA NITROGEN (BUN)</li>
+    <li>eGFR</li>
+    <li>FBS</li>
+    <li>HbA1c</li>
+    <li>LPT</li>
+    <li>LFT</li>
+    <li>RFT</li>
+    <li>SERUM CALCIUM</li>
+    <li>SERUM ELECTROLYTES</li>
+    <li>SERUM PHOSPHORUS</li>
+    <li>URINE ANALYSIS</li>
+    <li>CBC</li>
+  </ul>
+  <a href="appointment.html?package=Basic+Health+Package"><button>Book Now</button></a>
+</div>
+
+<div class="package">
+  <h2>BONE HEALTH PROFILE (5 TESTS) @ ₹1200</h2>
+  <ul>
+    <li>ALKALINE PHOSPHATASE (ALP)</li>
+    <li>SERUM ALBUMIN</li>
+    <li>SERUM CALCIUM</li>
+    <li>SERUM PHOSPHORUS</li>
+    <li>VITAMIN D3</li>
+  </ul>
+  <a href="appointment.html?package=Bone+Health+Profile"><button>Book Now</button></a>
+</div>
+
+<div class="package">
+  <h2>ANC PROFILE (19 TESTS) @ ₹1420</h2>
+  <ul>
+    <li>RBS</li>
+    <li>URINE ROUTINE</li>
+    <li>BT / CT</li>
+    <li>BLOOD GROUP & RH TYPE</li>
+    <li>Hb</li>
+    <li>PLATELET COUNT</li>
+    <li>TSH</li>
+    <li>HCV / HBsAg / HIV 1 & 2 / VDRL (CARD)</li>
+  </ul>
+  <a href="appointment.html?package=ANC+Profile"><button>Book Now</button></a>
+</div>
+
+<div class="package">
+  <h2>REGULAR HEALTH PACKAGE (87 TESTS) @ ₹1750</h2>
+  <ul>
+    <li>All major profiles: BUN, eGFR, FBS, HbA1c, Iron, LPT, LFT, RFT, CA-125, PSA, T3 T4 TSH, CBC, Urine</li>
+  </ul>
+  <a href="appointment.html?package=Regular+Health+Package"><button>Book Now</button></a>
+</div>
+
+<div class="package">
+  <h2>ANAEMIA PROFILE (25 TESTS) @ ₹1800</h2>
+  <ul>
+    <li>IRON</li>
+    <li>SERUM FERRITIN</li>
+    <li>TIBC</li>
+    <li>TRANSFERRIN SATURATION</li>
+    <li>CBC</li>
+    <li>PERIPHERAL SMEAR</li>
+  </ul>
+  <a href="appointment.html?package=Anaemia+Profile"><button>Book Now</button></a>
+</div>
+
+<div class="package">
+  <h2>CARDIAC PROFILE (6 TESTS) @ ₹1800</h2>
+  <ul>
+    <li>SGOT</li>
+    <li>CPK</li>
+    <li>CPK-MB</li>
+    <li>LDH</li>
+    <li>BP</li>
+    <li>ECG</li>
+  </ul>
+  <a href="appointment.html?package=Cardiac+Profile"><button>Book Now</button></a>
+</div>
+
+<div class="package">
+  <h2>JOINT HEALTH PROFILE (7 TESTS) @ ₹2000</h2>
+  <ul>
+    <li>RA</li>
+    <li>SERUM CALCIUM</li>
+    <li>SERUM PHOSPHORUS</li>
+    <li>SERUM URIC ACID</li>
+    <li>VITAMIN D3</li>
+    <li>ASLO</li>
+    <li>CRP</li>
+  </ul>
+  <a href="appointment.html?package=Joint+Health+Profile"><button>Book Now</button></a>
+</div>
+
+<div class="package">
+  <h2>EXECUTIVE HEALTH PACKAGE (89 TESTS) @ ₹2300</h2>
+  <ul>
+    <li>Full system check with Vitamins, Thyroid, Iron, PSA, CA-125, Urine, CBC, RFT, LFT, LPT</li>
+  </ul>
+  <a href="appointment.html?package=Executive+Health+Package"><button>Book Now</button></a>
+</div>
+
+<div class="package">
+  <h2>SENIOR CITIZEN HEALTH PACKAGE @ ₹2500</h2>
+  <ul>
+    <li>All major blood & organ tests including ECG, BP, Electrolytes, CBC, Urine, LFT, TSH</li>
+  </ul>
+  <a href="appointment.html?package=Senior+Citizen+Health+Package"><button>Book Now</button></a>
+</div>
+
+<div class="package">
+  <h2>COMPREHENSIVE HEALTH PACKAGE (96 TESTS) @ ₹2800</h2>
+  <ul>
+    <li>All body system checks + CRP, Apolipoproteins, Lp-a, CA-125, PSA, TSH, B12, D3</li>
+  </ul>
+  <a href="appointment.html?package=Comprehensive+Health+Package"><button>Book Now</button></a>
+</div>
+
+<div class="package">
+  <h2>WOMEN HEALTH CARE PACKAGE @ ₹3100</h2>
+  <ul>
+    <li>FBS, HbA1c, LFT, RFT, CBC, CA-125, BP, ECG, THYROID PROFILE, URINE</li>
+  </ul>
+  <a href="appointment.html?package=Women+Health+Care+Package"><button>Book Now</button></a>
+</div>
+<!-- END INSERTED PACKAGES -->
+
     </div>
   </div>
 
   <footer>
-    <p>&copy; 2025 Dream Diagnostics Center | Mangalore</p>
+    <p>&copy; 2025 Dream Diagnostics Center | Karkala</p>
   </footer>
 
 </body>
