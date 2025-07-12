@@ -113,14 +113,13 @@
 
 <div class="container">
   <h2>Book an Appointment</h2>
-  <form action="https://formspree.io/f/manjkzqy" method="POST">
+  <form id="appointmentForm" action="https://formspree.io/f/manjkzqy" method="POST">
     <input type="text" id="package" name="package" placeholder="Selected Package" readonly />
+    <input type="text" id="name" name="name" placeholder="Name" required />
+    <input type="email" id="email" name="email" placeholder="Email Address" required />
+    <input type="tel" id="phone" name="phone" placeholder="Phone Number" required />
 
-    <input type="text" name="name" placeholder="Name" required />
-    <input type="email" name="email" placeholder="Email Address" required />
-    <input type="tel" name="phone" placeholder="Phone Number" required />
-
-    <select name="appointment" required>
+    <select id="appointment" name="appointment" required>
       <option value="" disabled selected>Please select an appointment</option>
       <option value="General Checkup">General Checkup</option>
       <option value="Blood Test">Blood Test</option>
@@ -129,38 +128,66 @@
       <option value="X-Ray">X-Ray</option>
     </select>
 
-    <textarea name="message" placeholder="Message (Optional)"></textarea>
+    <textarea id="message" name="message" placeholder="Message (Optional)"></textarea>
     <button type="submit">Submit</button>
   </form>
 </div>
 
 <footer>
- <p>&copy; 2025 Dream Diagnostics Center | Karkala</p>
+  <p>&copy; 2025 Dream Diagnostics Center | Karkala</p>
 </footer>
 
-<!-- Autofill package name from URL -->
+<!-- Autofill and WhatsApp Script -->
 <script>
+  // Autofill package name from URL
   const urlParams = new URLSearchParams(window.location.search);
   const packageName = urlParams.get('package');
   if (packageName) {
     document.getElementById('package').value = decodeURIComponent(packageName);
   }
+
+  // Handle form submit to trigger WhatsApp message
+  document.getElementById('appointmentForm').addEventListener('submit', function (e) {
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const appointment = document.getElementById('appointment').value;
+    const message = document.getElementById('message').value.trim();
+    const pkg = document.getElementById('package').value.trim();
+
+    const adminNumber = "9353917782"; // WhatsApp for booking notifications
+    const confirmMessage = `✅ Your appointment at Dream Diagnostics Centre is confirmed!\nThank you, ${name}.`;
+
+    const userConfirmLink = `https://wa.me/91${phone}?text=${encodeURIComponent(confirmMessage)}`;
+    const fullMessage = 
+`📥 *New Appointment Booking*
+👤 Name: ${name}
+📧 Email: ${email}
+📞 Phone: ${phone}
+📦 Package: ${pkg || "N/A"}
+🗓️ Appointment For: ${appointment}
+📝 Message: ${message || "N/A"}
+
+✅ Confirm for user: ${userConfirmLink}`;
+
+    // Open WhatsApp to send details to admin
+    window.open(`https://wa.me/${adminNumber}?text=${encodeURIComponent(fullMessage)}`, '_blank');
+    // Allow Formspree to still submit the form (no preventDefault)
+  });
 </script>
+
 <!-- WhatsApp Floating Button -->
 <a href="https://wa.me/918217797657" target="_blank" style="
   position: fixed;
   bottom: 20px;
   right: 20px;
-  z-index: 1000;
-">
+  z-index: 1000;">
   <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp" style="
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  ">
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
 </a>
-
 
 </body>
 </html>

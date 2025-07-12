@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact Us - DREAM Diagnostic Center</title>
+  <title>Book Appointment - Dream Diagnostics</title>
+  <link rel="stylesheet" href="styles.css" />
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -14,27 +15,19 @@
     header {
       background-color: #004080;
       color: white;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
+      padding: 20px;
+      text-align: center;
     }
 
-    .logo-title {
+    .logo-container {
       display: flex;
       align-items: center;
+      justify-content: center;
+      gap: 15px;
     }
 
-    .logo-title img {
-      height: 100px;
-      margin-right: 12px;
-    }
-
-    .logo-title h1 {
-      font-size: 24px;
-      margin: 0;
-      white-space: nowrap;
+    .logo {
+      height: 50px;
     }
 
     nav {
@@ -43,7 +36,7 @@
 
     nav a {
       color: white;
-      margin: 0 12px;
+      margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
       font-size: 16px;
@@ -54,39 +47,42 @@
     }
 
     .container {
-      max-width: 1000px;
+      max-width: 700px;
       margin: 40px auto;
-      padding: 0 20px;
-    }
-
-    h1, h2, h3 {
-      text-align: center;
-      color: #004080;
-    }
-
-    .contact-info {
-      background: #fff;
-      padding: 25px;
+      background: white;
+      padding: 30px;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      margin-bottom: 30px;
     }
 
-    .contact-info p {
+    h2 {
+      text-align: center;
+      color: #004080;
+      margin-bottom: 20px;
+    }
+
+    form input, form select, form textarea, form button {
+      width: 100%;
+      padding: 12px;
       margin: 10px 0;
-      color: #333;
+      border-radius: 5px;
+      border: 1px solid #ccc;
       font-size: 16px;
     }
 
-    .hours {
-      margin-top: 20px;
+    form input[readonly] {
+      background-color: #f0f0f0;
     }
 
-    iframe {
-      width: 100%;
-      height: 400px;
+    form button {
+      background-color: #007bff;
+      color: white;
       border: none;
-      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background-color: #0056b3;
     }
 
     footer {
@@ -94,82 +90,104 @@
       color: white;
       text-align: center;
       padding: 20px;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="logo-title">
-      <img src="d.jpg" alt="Dream Diagnostics Logo" />
-      <h1 style="color: #f7f7f7;">Dream Diagnostics Center</h1>
-      
-    </div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="packages.html">Health Packages</a>
-      <a href="services.html">Our Services</a>
-      <a href="contact.html">Contact Us</a>
-    </nav>
-  </header>
-
-  <div class="container">
-    <div class="contact-info">
-  <h2>Location</h2>
-
-
-  <p><strong>Phone: 
-    <a href="tel:+918258200369">08258-200369</a>, 
-    <a href="tel:+918217797657">8217797657</a>, 
-    <a href="tel:+917483902173">7483902173</a>, 
-    <a href="tel:+916362651711">6362651711</a>
-  </strong></p>
-  <p><strong>Email: 
-    <a href="mailto:ddckarkala25@gmail.com">ddckarkala25@gmail.com</a>
-  </strong></p>
-
-  <p><strong>Address: Ground Floor, Karkala Inn, Pulkeri Bypass Circle, Karkala 574114</strong></p>
-
-  <div class="hours">
-    <h3>Working Hours</h3>
-    <strong>
-      <p>Monday to Saturday: 7:00am – 7:00pm</p>
-      <p>Sunday: 7:00am – 1:00pm</p>
-    </strong>
+<header>
+  <div class="logo-container">
+    <img src="d.jpg" alt="Dream Diagnostics Logo" class="logo">
+    <h1>Dream Diagnostic Center</h1>
   </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="packages.html">Health Packages</a>
+    <a href="services.html">Our Services</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="appointment.html">Book Appointment</a>
+  </nav>
+</header>
+
+<div class="container">
+  <h2>Book an Appointment</h2>
+  <form id="appointmentForm" action="https://formspree.io/f/manjkzqy" method="POST">
+    <input type="text" id="package" name="package" placeholder="Selected Package" readonly />
+    <input type="text" id="name" name="name" placeholder="Name" required />
+    <input type="email" id="email" name="email" placeholder="Email Address" required />
+    <input type="tel" id="phone" name="phone" placeholder="Phone Number" required />
+
+    <select id="appointment" name="appointment" required>
+      <option value="" disabled selected>Please select an appointment</option>
+      <option value="General Checkup">General Checkup</option>
+      <option value="Blood Test">Blood Test</option>
+      <option value="ECG">ECG</option>
+      <option value="Ultrasound">Ultrasound</option>
+      <option value="X-Ray">X-Ray</option>
+    </select>
+
+    <textarea id="message" name="message" placeholder="Message (Optional)"></textarea>
+    <button type="submit">Submit</button>
+  </form>
 </div>
 
+<footer>
+  <p>&copy; 2025 Dream Diagnostics Center | Karkala</p>
+</footer>
 
-    <div class="contact-info">
-      <h2>Find Us on the Map</h2>
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3884.490751305902!2d74.99200127512665!3d13.194476787141713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbb57c775ee14f3%3A0xfe08acd012da8f0b!2sDream%20Diagnostic%20Centre!5e0!3m2!1sen!2sin!4v1751618827060!5m2!1sen!2sin"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-    </div>
-  </div>
+<!-- Autofill and WhatsApp Script -->
+<script>
+  // Autofill package name from URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const packageName = urlParams.get('package');
+  if (packageName) {
+    document.getElementById('package').value = decodeURIComponent(packageName);
+  }
 
-  <footer>
-    <p>&copy; 2025 Dream Diagnostic Center | Karkala</p>
-  </footer>
-  <!-- WhatsApp Floating Button -->
+  // Handle form submit to trigger WhatsApp message
+  document.getElementById('appointmentForm').addEventListener('submit', function (e) {
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const appointment = document.getElementById('appointment').value;
+    const message = document.getElementById('message').value.trim();
+    const pkg = document.getElementById('package').value.trim();
+
+    const adminNumber = "9353917782"; // WhatsApp for booking notifications
+    const confirmMessage = `✅ Your appointment at Dream Diagnostics Centre is confirmed!\nThank you, ${name}.`;
+
+    const userConfirmLink = `https://wa.me/91${phone}?text=${encodeURIComponent(confirmMessage)}`;
+    const fullMessage = 
+`📥 *New Appointment Booking*
+👤 Name: ${name}
+📧 Email: ${email}
+📞 Phone: ${phone}
+📦 Package: ${pkg || "N/A"}
+🗓️ Appointment For: ${appointment}
+📝 Message: ${message || "N/A"}
+
+✅ Confirm for user: ${userConfirmLink}`;
+
+    // Open WhatsApp to send details to admin
+    window.open(`https://wa.me/${adminNumber}?text=${encodeURIComponent(fullMessage)}`, '_blank');
+    // Allow Formspree to still submit the form (no preventDefault)
+  });
+</script>
+
+<!-- WhatsApp Floating Button -->
 <a href="https://wa.me/918217797657" target="_blank" style="
   position: fixed;
   bottom: 20px;
   right: 20px;
-  z-index: 1000;
-">
+  z-index: 1000;">
   <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp" style="
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  ">
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
 </a>
-
 
 </body>
 </html>
