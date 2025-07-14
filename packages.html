@@ -7,122 +7,153 @@
   <link rel="stylesheet" href="styles.css" />
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f7f7f7;
-      margin: 0;
-      padding: 0;
-    }
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  margin: 0;
+  padding: 0;
+}
 
-    header {
-      background-color: #004080;
-      color: white;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
+header {
+  background-color: #004080;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
 
-    .logo-title {
-      display: flex;
-      align-items: center;
-    }
+.logo-title {
+  display: flex;
+  align-items: center;
+}
 
-    .logo-title img {
-      height: 100px;
-      margin-right: 15px;
-    }
+.logo-title img {
+  height: 100px;
+  margin-right: 15px;
+}
 
-    .logo-title h1 {
-      font-size: 26px;
-      margin: 0;
-     color: white;
-    }
+.logo-title h1 {
+  font-size: 26px;
+  margin: 0;
+  color: white;
+}
 
-    nav {
-      margin-top: 10px;
-    }
+nav {
+  margin-top: 10px;
+}
 
-    nav a {
-      color: white;
-      margin: 0 12px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 16px;
-    }
+nav a {
+  color: white;
+  margin: 0 12px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+}
 
-    nav a:hover {
-      text-decoration: underline;
-    }
+nav a:hover {
+  text-decoration: underline;
+}
 
-    .container {
-      max-width: 1200px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
 
-    h1 {
-      text-align: center;
-      color: #004080;
-      margin-bottom: 30px;
-    }
+h1 {
+  text-align: center;
+  color: #004080;
+  margin-bottom: 30px;
+}
 
-    .packages-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
+.packages-section {
+  padding: 60px 20px;
+  background: #fdf6fa;
+  text-align: center;
+}
 
-    .package {
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      padding: 20px;
-      width: 100%;
-      box-sizing: border-box;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
+.section-title {
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #333;
+}
 
-    .package:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-    }
+.package-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-    .package h2 {
-      color: #004080;
-      margin-bottom: 10px;
-      font-size: 20px;
-    }
+.package-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  padding: 20px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease-in-out;
+}
 
-    .package ul {
-      list-style-type: disc;
-      padding-left: 20px;
-      margin-top: 10px;
-      margin-bottom: 15px;
-      color: #444;
-    }
+.package-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-    .package a button {
-      background-color: #007bff;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: bold;
-    }
+.package-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  object-fit: cover;
+  max-height: 160px;
+}
 
-    .package a button:hover {
-      background-color: #0056b3;
-    }
+.package-card h3 {
+  font-size: 20px;
+  color: #004080; /* Changed from purple to blue */
+  margin-bottom: 15px;
+}
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #004080;
-      color: white;
-      margin-top: 40px;
-    }
+.package-card ul {
+  list-style: none;
+  text-align: left;
+  padding-left: 0;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.package-card ul li {
+  margin-bottom: 5px;
+  color: #444;
+}
+
+.package-card .btn {
+  background-color: #004080; /* Primary blue */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  display: inline-block;
+  transition: background 0.3s ease;
+}
+
+.package-card .btn:hover {
+  background-color: #002a5c; /* Slightly darker blue for hover */
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #004080;
+  color: white;
+  margin-top: 40px;
+}
+
+
   </style>
 </head>
 <body>
@@ -143,203 +174,107 @@
 
   <div class="container">
     <h1>Our Health Packages</h1>
-    <div class="packages-grid">
-      
+    
+
+      <section class="packages-section">
+  
+  <div class="package-grid">
+
+    <div class="package-card">
+      <img src="1.jpg" alt="Diabetic Profile">
+      <h3>DIABETIC PROFILE (5 TESTS) @ ₹680</h3>
+      <ul>
+        <li>FASTING BLOOD SUGAR (FBS)</li>
+        <li>HbA1c (GLYCOSYLATED HAEMOGLOBIN)</li>
+        <li>RENAL FUNCTION TEST (RFT)</li>
+        <li>POST PRANDIAL BLOOD SUGAR (PPBS)</li>
+      </ul>
+      <a href="appointment.html?package=Diabetic+Profile" class="btn">Book Now</a>
+    </div>
+
+    <div class="package-card">
+      <img src="1.jpg" alt="Mini Health Package">
+      <h3>MINI HEALTH PACKAGE (61 TESTS) @ ₹750</h3>
+      <ul>
+        <li>BLOOD UREA NITROGEN (BUN)</li>
+        <li>ESTIMATED GLOMERULAR FILTRATION RATE (eGFR)</li>
+        <li>FASTING BLOOD SUGAR (FBS)</li>
+        <li>LIPID PROFILE TEST (LPT)</li>
+        <li>RENAL FUNCTION TEST (RFT)</li>
+        <li>COMPLETE URINE ANALYSIS</li>
+        <li>COMPLETE BLOOD COUNT (CBC)</li>
+      </ul>
+      <a href="appointment.html?package=Mini+Health+Package" class="btn">Book Now</a>
+    </div>
+
+    <div class="package-card">
+      <img src="1.jpg" alt="Allergy Profile">
+      <h3>ALLERGY PROFILE (20 TESTS) @ ₹950</h3>
+      <ul>
+        <li>ABSOLUTE EOSINOPHIL COUNT (AEC)</li>
+        <li>COMPLETE BLOOD COUNT WITH ESR (CBC WITH ESR)</li>
+        <li>IgE LEVEL</li>
+      </ul>
+      <a href="appointment.html?package=Allergy+Profile" class="btn">Book Now</a>
+    </div>
+
+    <div class="package-card">
+      <img src="1.jpg" alt="Kidney Health Profile">
+      <h3>KIDNEY HEALTH PROFILE (9 TESTS) @ ₹1100</h3>
+      <ul>
+        <li>BLOOD UREA</li>
+        <li>BLOOD UREA NITROGEN (BUN)</li>
+        <li>ESTIMATED GLOMERULAR FILTRATION RATE (eGFR)</li>
+        <li>SERUM CALCIUM</li>
+        <li>SERUM CREATININE</li>
+        <li>SERUM PHOSPHORUS</li>
+        <li>SERUM POTASSIUM (K+)</li>
+        <li>SERUM SODIUM (Na+)</li>
+        <li>SERUM URIC ACID</li>
+      </ul>
+      <a href="appointment.html?package=Kidney+Health+Profile" class="btn">Book Now</a>
+    </div>
+
+    <div class="package-card">
+      <img src="1.jpg" alt="Fever Profile">
+      <h3>FEVER PROFILE (36 TESTS) @ ₹1200</h3>
+      <ul>
+        <li>URINE ROUTINE</li>
+        <li>COMPLETE BLOOD COUNT WITH ESR (CBC WITH ESR)</li>
+        <li>DENGUE PROFILE (IgG, IgM & Ns1Ag)</li>
+        <li>MALARIAL PARASITE (CARD TEST)</li>
+        <li>C-REACTIVE PROTEIN (CRP)</li>
+        <li>WIDAL SLIDE</li>
+      </ul>
+      <a href="appointment.html?package=Fever+Profile" class="btn">Book Now</a>
+    </div>
+
+    <div class="package-card">
+      <img src="1.jpg" alt="Basic Health Package">
+      <h3>BASIC HEALTH PACKAGE (79 TESTS) @ ₹1200</h3>
+      <ul>
+        <li>BLOOD UREA NITROGEN (BUN)</li>
+        <li>eGFR</li>
+        <li>FBS</li>
+        <li>HbA1c</li>
+        <li>LPT</li>
+        <li>LFT</li>
+        <li>RFT</li>
+        <li>SERUM CALCIUM</li>
+        <li>SERUM ELECTROLYTES</li>
+        <li>SERUM PHOSPHORUS</li>
+        <li>URINE ANALYSIS</li>
+        <li>CBC</li>
+      </ul>
+      <a href="appointment.html?package=Basic+Health+Package" class="btn">Book Now</a>
+    </div>
+
+    <!-- Add the rest of the packages in the same pattern -->
+
+  </div>
+</section>
     
      
-<div class="package">
-  <h2>DIABETIC PROFILE (5 TESTS) @ ₹680</h2>
-  <ul>
-    <li>FASTING BLOOD SUGAR (FBS)</li>
-    <li>HbA1c (GLYCOSYLATED HAEMOGLOBIN)</li>
-    <li>RENAL FUNCTION TEST (RFT)</li>
-    <li>POST PRANDIAL BLOOD SUGAR (PPBS)</li>
-  </ul>
-  <a href="appointment.html?package=Diabetic+Profile"><button>Book Now</button></a>
-</div>
-
-<div class="package">
-  <h2>MINI HEALTH PACKAGE (61 TESTS) @ ₹750</h2>
-  <ul>
-    <li>BLOOD UREA NITROGEN (BUN)</li>
-    <li>ESTIMATED GLOMERULAR FILTRATION RATE (eGFR)</li>
-    <li>FASTING BLOOD SUGAR (FBS)</li>
-    <li>LIPID PROFILE TEST (LPT)</li>
-    <li>RENAL FUNCTION TEST (RFT)</li>
-    <li>COMPLETE URINE ANALYSIS</li>
-    <li>COMPLETE BLOOD COUNT (CBC)</li>
-  </ul>
-  <a href="appointment.html?package=Mini+Health+Package"><button>Book Now</button></a>
-</div>
-
-<div class="package">
-  <h2>ALLERGY PROFILE (20 TESTS) @ ₹950</h2>
-  <ul>
-    <li>ABSOLUTE EOSINOPHIL COUNT (AEC)</li>
-    <li>COMPLETE BLOOD COUNT WITH ESR (CBC WITH ESR)</li>
-    <li>IgE LEVEL</li>
-  </ul>
-  <a href="appointment.html?package=Allergy+Profile"><button>Book Now</button></a>
-</div>
-
-<div class="package">
-  <h2>KIDNEY HEALTH PROFILE (9 TESTS) @ ₹1100</h2>
-  <ul>
-    <li>BLOOD UREA</li>
-    <li>BLOOD UREA NITROGEN (BUN)</li>
-    <li>ESTIMATED GLOMERULAR FILTRATION RATE (eGFR)</li>
-    <li>SERUM CALCIUM</li>
-    <li>SERUM CREATININE</li>
-    <li>SERUM PHOSPHORUS</li>
-    <li>SERUM POTASSIUM (K+)</li>
-    <li>SERUM SODIUM (Na+)</li>
-    <li>SERUM URIC ACID</li>
-  </ul>
-  <a href="appointment.html?package=Kidney+Health+Profile"><button>Book Now</button></a>
-</div>
-
-<div class="package">
-  <h2>FEVER PROFILE (36 TESTS) @ ₹1200</h2>
-  <ul>
-    <li>URINE ROUTINE</li>
-    <li>COMPLETE BLOOD COUNT WITH ESR (CBC WITH ESR)</li>
-    <li>DENGUE PROFILE (IgG, IgM & Ns1Ag)</li>
-    <li>MALARIAL PARASITE (CARD TEST)</li>
-    <li>C-REACTIVE PROTEIN (CRP)</li>
-    <li>WIDAL SLIDE</li>
-  </ul>
-  <a href="appointment.html?package=Fever+Profile"><button>Book Now</button></a>
-</div>
-
-<div class="package">
-  <h2>BASIC HEALTH PACKAGE (79 TESTS) @ ₹1200</h2>
-  <ul>
-    <li>BLOOD UREA NITROGEN (BUN)</li>
-    <li>eGFR</li>
-    <li>FBS</li>
-    <li>HbA1c</li>
-    <li>LPT</li>
-    <li>LFT</li>
-    <li>RFT</li>
-    <li>SERUM CALCIUM</li>
-    <li>SERUM ELECTROLYTES</li>
-    <li>SERUM PHOSPHORUS</li>
-    <li>URINE ANALYSIS</li>
-    <li>CBC</li>
-  </ul>
-  <a href="appointment.html?package=Basic+Health+Package"><button>Book Now</button></a>
-</div>
-
-<div class="package">
-  <h2>BONE HEALTH PROFILE (5 TESTS) @ ₹1200</h2>
-  <ul>
-    <li>ALKALINE PHOSPHATASE (ALP)</li>
-    <li>SERUM ALBUMIN</li>
-    <li>SERUM CALCIUM</li>
-    <li>SERUM PHOSPHORUS</li>
-    <li>VITAMIN D3</li>
-  </ul>
-  <a href="appointment.html?package=Bone+Health+Profile"><button>Book Now</button></a>
-</div>
-
-<div class="package">
-  <h2>ANC PROFILE (19 TESTS) @ ₹1420</h2>
-  <ul>
-    <li>RBS</li>
-    <li>URINE ROUTINE</li>
-    <li>BT / CT</li>
-    <li>BLOOD GROUP & RH TYPE</li>
-    <li>Hb</li>
-    <li>PLATELET COUNT</li>
-    <li>TSH</li>
-    <li>HCV / HBsAg / HIV 1 & 2 / VDRL (CARD)</li>
-  </ul>
-  <a href="appointment.html?package=ANC+Profile"><button>Book Now</button></a>
-</div>
-
-<div class="package">
-  <h2>REGULAR HEALTH PACKAGE (87 TESTS) @ ₹1750</h2>
-  <ul>
-    <li>All major profiles: BUN, eGFR, FBS, HbA1c, Iron, LPT, LFT, RFT, CA-125, PSA, T3 T4 TSH, CBC, Urine</li>
-  </ul>
-  <a href="appointment.html?package=Regular+Health+Package"><button>Book Now</button></a>
-</div>
-
-<div class="package">
-  <h2>ANAEMIA PROFILE (25 TESTS) @ ₹1800</h2>
-  <ul>
-    <li>IRON</li>
-    <li>SERUM FERRITIN</li>
-    <li>TIBC</li>
-    <li>TRANSFERRIN SATURATION</li>
-    <li>CBC</li>
-    <li>PERIPHERAL SMEAR</li>
-  </ul>
-  <a href="appointment.html?package=Anaemia+Profile"><button>Book Now</button></a>
-</div>
-
-<div class="package">
-  <h2>CARDIAC PROFILE (6 TESTS) @ ₹1800</h2>
-  <ul>
-    <li>SGOT</li>
-    <li>CPK</li>
-    <li>CPK-MB</li>
-    <li>LDH</li>
-    <li>BP</li>
-    <li>ECG</li>
-  </ul>
-  <a href="appointment.html?package=Cardiac+Profile"><button>Book Now</button></a>
-</div>
-
-<div class="package">
-  <h2>JOINT HEALTH PROFILE (7 TESTS) @ ₹2000</h2>
-  <ul>
-    <li>RA</li>
-    <li>SERUM CALCIUM</li>
-    <li>SERUM PHOSPHORUS</li>
-    <li>SERUM URIC ACID</li>
-    <li>VITAMIN D3</li>
-    <li>ASLO</li>
-    <li>CRP</li>
-  </ul>
-  <a href="appointment.html?package=Joint+Health+Profile"><button>Book Now</button></a>
-</div>
-
-<div class="package">
-  <h2>EXECUTIVE HEALTH PACKAGE (89 TESTS) @ ₹2300</h2>
-  <ul>
-    <li>Full system check with Vitamins, Thyroid, Iron, PSA, CA-125, Urine, CBC, RFT, LFT, LPT</li>
-  </ul>
-  <a href="appointment.html?package=Executive+Health+Package"><button>Book Now</button></a>
-</div>
-
-<div class="package">
-  <h2>SENIOR CITIZEN HEALTH PACKAGE @ ₹2500</h2>
-  <ul>
-    <li>All major blood & organ tests including ECG, BP, Electrolytes, CBC, Urine, LFT, TSH</li>
-  </ul>
-  <a href="appointment.html?package=Senior+Citizen+Health+Package"><button>Book Now</button></a>
-</div>
-
-<div class="package">
-  <h2>COMPREHENSIVE HEALTH PACKAGE (96 TESTS) @ ₹2800</h2>
-  <ul>
-    <li>All body system checks + CRP, Apolipoproteins, Lp-a, CA-125, PSA, TSH, B12, D3</li>
-  </ul>
-  <a href="appointment.html?package=Comprehensive+Health+Package"><button>Book Now</button></a>
-</div>
-
-<div class="package">
-  <h2>WOMEN HEALTH CARE PACKAGE @ ₹3100</h2>
-  <ul>
-    <li>FBS, HbA1c, LFT, RFT, CBC, CA-125, BP, ECG, THYROID PROFILE, URINE</li>
-  </ul>
-  <a href="appointment.html?package=Women+Health+Care+Package"><button>Book Now</button></a>
-</div>
-
-
-    </div>
-  </div>
 
   <footer>
     <p>&copy; 2025 Dream Diagnostics Center | Karkala</p>
@@ -358,6 +293,25 @@
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   ">
 </a>
+<script>
+  const cards = document.querySelectorAll('.package-card');
+
+  const revealOnScroll = () => {
+    const triggerBottom = window.innerHeight * 0.85;
+    cards.forEach(card => {
+      const boxTop = card.getBoundingClientRect().top;
+      if (boxTop < triggerBottom) {
+        card.classList.add('show');
+      } else {
+        card.classList.remove('show');
+      }
+    });
+  };
+
+  window.addEventListener('scroll', revealOnScroll);
+  window.addEventListener('load', revealOnScroll);
+</script>
+
 
 
 </body>
