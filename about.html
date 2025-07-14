@@ -81,6 +81,12 @@
     footer a{color:#fff;text-decoration:none}
     footer img{height:80px;margin-bottom:15px}
 
+    /* --- prominent BOOK NOW button in header --- */
+    .book-now{display:inline-block;padding:12px 26px;font-size:18px;border-radius:8px;font-weight:bold;color:#fff;background:#ff6600;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,.25);animation:pulse 2s infinite ease-in-out;transition:transform .3s,box-shadow .3s}
+    .book-now:hover{transform:scale(1.05);box-shadow:0 6px 15px rgba(0,0,0,.35)}
+
+    @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.08)}100%{transform:scale(1)}}
+
 
   </style>
 </head>
@@ -98,6 +104,8 @@
       <a href="services.html">Our Services</a>
       <a href="contact.html">Contact Us</a>
     </nav>
+    <!-- Prominent BOOK NOW / APPOINTMENT button -->
+    <a href="appointment.html" class="book-now">Book&nbsp;Now</a>
   </header>
 
   <div class="container">
