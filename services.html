@@ -108,6 +108,92 @@ nav {
   justify-content: center;
   padding: 12px 0;              /* Controls height of the nav bar */
 }
+.services-section {
+  padding: 50px 20px;
+  background-color: #f5f7fa;
+  text-align: center;
+}
+
+.services-header h2 {
+  font-size: 30px;
+  color: #004080;
+  margin-bottom: 40px;
+}
+
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  animation: floatCard 5s ease-in-out infinite;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.service-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.service-card p {
+  font-weight: bold;
+  font-size: 18px;
+  color: #004080;
+  padding: 15px 10px;
+  flex-grow: 1;
+}
+
+.book-btn {
+  display: block;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  margin: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.book-btn:hover {
+  background-color: #0056b3;
+}
+
+.service-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes floatCard {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .services-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .services-container {
+    grid-template-columns: 1fr;
+  }
+}
+
 
   </style>
 </head>
@@ -128,22 +214,47 @@ nav {
     <!-- Prominent BOOK NOW / APPOINTMENT button -->
     <a href="appointment.html" class="book-now">Book&nbsp;Now</a>
   </header>
+<div class="services-section">
+  <div class="services-header">
+    <h2>State Of The Art Facilities</h2>
+  </div>
 
-  <div class="container">
-    <div class="section">
-      <h2>State Of The Art Facilities</h2>
-      <ul>
-        <li>Clinical Laboratory</li>
-        <li>Blood Pressure(BP)</li>
-        <li>Ultrasound</li>  
-        <li>ECG</li>
-        <li>BMI(Body mass index)</li>
-        <li>Height</li>
-        <li>Weight</li>
-      </ul>
+  <div class="services-container">
+    <div class="service-card">
+      <img src="lab.jpg" alt="Clinical Laboratory">
+      <p>Clinical Laboratory</p>
+      <a class="book-btn" href="appointment.html?service=Clinical%20Laboratory">Book Now</a>
     </div>
+    <div class="service-card">
+      <img src="bp.jpg" alt="Blood Pressure (BP)">
+      <p>Blood Pressure (BP)</p>
+      <a class="book-btn" href="appointment.html?service=Blood%20Pressure%20(BP)">Book Now</a>
+    </div>
+    <div class="service-card">
+      <img src="ecg.jpg" alt="ECG">
+      <p>ECG</p>
+      <a class="book-btn" href="appointment.html?service=ECG">Book Now</a>
+    </div>
+    <div class="service-card">
+      <img src="bmi.jpg" alt="BMI (Body Mass Index)">
+      <p>BMI (Body Mass Index)</p>
+      <a class="book-btn" href="appointment.html?service=BMI%20(Body%20Mass%20Index)">Book Now</a>
+    </div>
+    <div class="service-card">
+      <img src="h.jpg" alt="Height">
+      <p>Height</p>
+      <a class="book-btn" href="appointment.html?service=Height">Book Now</a>
+    </div>
+    <div class="service-card">
+      <img src="w.jpg" alt="Weight">
+      <p>Weight</p>
+      <a class="book-btn" href="appointment.html?service=Weight">Book Now</a>
+    </div>
+  </div>
+</div>
 
-   </div>
+
+
 
  <!-- ============================ FOOTER ============================ -->
   <footer>
@@ -151,7 +262,7 @@ nav {
       <!-- left -->
       <div style="flex:1;min-width:250px;margin-bottom:20px">
         <img src="d.jpg" alt="Dream Diagnostics Logo">
-        <p style="color: #f7f7f7;"> Dream Diagnostics Center is a modern healthcare diagnostics center providing quality and affordable services in Karkala. Our mission is to ensure timely, reliable and accurate diagnosis for everyone.</p>
+        <p style="color: #f7f7f7;"> Dream Diagnostic Centre is a modern healthcare diagnostics center providing quality and affordable services in Karkala. Our mission is to ensure timely, reliable and accurate diagnosis for everyone.</p>
       </div>
       <!-- middle -->
       <div style="flex:1;min-width:150px;margin-bottom:20px">
@@ -177,7 +288,7 @@ nav {
       </div>
     </div>
     <hr style="border:0.5px solid #663399;max-width:1200px;margin:30px auto">
-    <p>&copy; 2025 Dream Diagnostics Center | Designed with ❤️ by Kodaikanal the OG</p>
+    <p>&copy;  Dream Diagnostic Centre | Designed with ❤️ by Kodaikanal the OG</p>
     <p><a href="#">Privacy Policy</a> | <a href="#">Terms and Conditions</a></p>
   </footer>
   <!-- WhatsApp Floating Button -->

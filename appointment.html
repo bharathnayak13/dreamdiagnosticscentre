@@ -123,7 +123,7 @@
       <option value="" disabled selected>Please select an appointment</option>
       <option value="Clinical Laboratory">Clinical Laboratory</option>
       <option value="Blood Pressure(BP)">Blood Pressure(BP)</option>
-      <option value="Ultrasound">Ultrasound</option>
+    
       <option value="ECG">ECG</option>
       <option value="BMI(Body mass index)">BMI(Body mass index)</option>
       <option value="Height">Height</option>
@@ -176,6 +176,19 @@
     window.open(`https://wa.me/${adminNumber}?text=${encodeURIComponent(fullMessage)}`, '_blank');
     // Allow Formspree to still submit the form (no preventDefault)
   });
+
+  // Autofill appointment type from URL parameter
+const serviceParam = new URLSearchParams(window.location.search).get('service');
+if (serviceParam) {
+  const appointmentDropdown = document.getElementById('appointment');
+  for (let option of appointmentDropdown.options) {
+    if (option.value.toLowerCase() === serviceParam.toLowerCase()) {
+      option.selected = true;
+      break;
+    }
+  }
+}
+
 </script>
 
 <!-- WhatsApp Floating Button -->
@@ -190,6 +203,7 @@
     border-radius: 50%;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
 </a>
+
 
 </body>
 </html>
