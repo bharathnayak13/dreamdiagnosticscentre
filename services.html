@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Services - Dream Diagnostics Center</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      margin: 0;
+    }
+
+    header {
+      background-color: #004080;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo-title {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-title img {
+      height: 100px;
+      margin-right: 15px;
+    }
+
+    .logo-title h1 {
+      font-size: 24px;
+      margin: 0;
+      white-space: nowrap;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 12px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h1, h2 {
+      color: #004080;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      color: #444;
+    }
+
+    .section {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      padding: 25px;
+      margin-bottom: 30px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+     /* --- footer --- */
+    footer{background:#000;color:#fff;text-align:center;padding:40px 20px;margin-top:40px}
+    footer a{color:#fff;text-decoration:none}
+    footer img{height:80px;margin-bottom:15px}
+
+    /* --- prominent BOOK NOW button in header --- */
+    .book-now{display:inline-block;padding:12px 26px;font-size:18px;border-radius:8px;font-weight:bold;color:#fff;background:#ff6600;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,.25);animation:pulse 2s infinite ease-in-out;transition:transform .3s,box-shadow .3s}
+    .book-now:hover{transform:scale(1.05);box-shadow:0 6px 15px rgba(0,0,0,.35)}
+
+    @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.08)}100%{transform:scale(1)}}
+nav {
+  background-color: #003060;   /* Dark blue background */
+  display: flex;
+  justify-content: center;
+  padding: 12px 0;              /* Controls height of the nav bar */
+}
+.services-section {
+  padding: 50px 20px;
+  background-color: #f5f7fa;
+  text-align: center;
+}
+
+.services-header h2 {
+  font-size: 30px;
+  color: #004080;
+  margin-bottom: 40px;
+}
+
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  animation: floatCard 5s ease-in-out infinite;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.service-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.service-card p {
+  font-weight: bold;
+  font-size: 18px;
+  color: #004080;
+  padding: 15px 10px;
+  flex-grow: 1;
+}
+
+.book-btn {
+  display: block;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  margin: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.book-btn:hover {
+  background-color: #0056b3;
+}
+
+.service-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes floatCard {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .services-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .services-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-title">
+      <img src="d.jpg" alt="Dream Diagnostics Logo" />
+      <h1 style="color: #f7f7f7;">Dream Diagnostic Centre</h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="packages.html">Health Packages</a>
+      <a href="services.html">Our Services</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+    <!-- Prominent BOOK NOW / APPOINTMENT button -->
+    <a href="appointment.html" class="book-now">Book&nbsp;Now</a>
+  </header>
+<div class="services-section">
+  <div class="services-header">
+    <h2>State Of The Art Facilities</h2>
+  </div>
+
+  <div class="services-container">
+    <div class="service-card">
+      <img src="lab.jpg" alt="Clinical Laboratory">
+      <p>Clinical Laboratory</p>
+      <a class="book-btn" href="appointment.html?service=Clinical%20Laboratory">Book Now</a>
+    </div>
+    <div class="service-card">
+      <img src="bp.jpg" alt="Blood Pressure (BP)">
+      <p>Blood Pressure (BP)</p>
+      <a class="book-btn" href="appointment.html?service=Blood%20Pressure%20(BP)">Book Now</a>
+    </div>
+    <div class="service-card">
+      <img src="ecg.jpg" alt="ECG">
+      <p>ECG</p>
+      <a class="book-btn" href="appointment.html?service=ECG">Book Now</a>
+    </div>
+    <div class="service-card">
+      <img src="bmi.jpg" alt="BMI (Body Mass Index)">
+      <p>BMI (Body Mass Index)</p>
+      <a class="book-btn" href="appointment.html?service=BMI%20(Body%20Mass%20Index)">Book Now</a>
+    </div>
+    <div class="service-card">
+      <img src="h.jpg" alt="Height">
+      <p>Height</p>
+      <a class="book-btn" href="appointment.html?service=Height">Book Now</a>
+    </div>
+    <div class="service-card">
+      <img src="w.jpg" alt="Weight">
+      <p>Weight</p>
+      <a class="book-btn" href="appointment.html?service=Weight">Book Now</a>
+    </div>
+  </div>
+</div>
+
+
+
+
+ <!-- ============================ FOOTER ============================ -->
+  <footer>
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;max-width:1200px;margin:auto">
+      <!-- left -->
+      <div style="flex:1;min-width:250px;margin-bottom:20px">
+        <img src="d.jpg" alt="Dream Diagnostics Logo">
+        <p style="color: #f7f7f7;"> Dream Diagnostic Centre is a modern healthcare diagnostics center providing quality and affordable services in Karkala. Our mission is to ensure timely, reliable and accurate diagnosis for everyone.</p>
+      </div>
+      <!-- middle -->
+      <div style="flex:1;min-width:150px;margin-bottom:20px">
+        <h3 style="margin-bottom:15px">Explore</h3>
+        <p><a href="index.html">Home</a></p>
+        <p><a href="#about">About Us</a></p>
+        <p><a href="services.html">Our Services</a></p>
+        <p><a href="contact.html">Contact Us</a></p>
+      </div>
+      <!-- right -->
+      <div style="flex:1;min-width:250px;margin-bottom:20px">
+        <h3 style="margin-bottom:15px">Get in Touch</h3>
+        <p>📞 <a href="tel:+918258200369">08258-200369</a> / <a href="tel:+918217797657">+91‑8217797657</a></p>
+
+
+        <p>📧 <a href="mailto:ddckarkala25@gmail.com">ddckarkala25@gmail.com</a></p>
+        <p style="color: white;">📍 Karkala Inn,<br> Pulkeri Bypass Circle, Karkala 574114</p>
+        <div style="margin-top:20px">
+          <a href="https://www.instagram.com/_dreamdiagnosticcentre" target="_blank">
+            <img src="https://img.icons8.com/ios-glyphs/30/ffffff/instagram-new.png" alt="Instagram" style="background:#a64ca6;padding:10px;border-radius:8px">
+          </a>
+        </div>
+      </div>
+    </div>
+    <hr style="border:0.5px solid #663399;max-width:1200px;margin:30px auto">
+    <p>&copy;  Dream Diagnostic Centre </p>
+    <p><a href="#">Privacy Policy</a> | <a href="#">Terms and Conditions</a></p>
+  </footer>
+  <!-- WhatsApp Floating Button -->
+<a href="https://wa.me/918217797657" target="_blank" style="
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+">
+  <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp" style="
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  ">
+</a>
+
+</body>
+</html>

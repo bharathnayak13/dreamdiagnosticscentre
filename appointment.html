@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book Appointment - Dream Diagnostics</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      margin: 0;
+    }
+
+    header {
+      background-color: #004080;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .logo {
+      height: 50px;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #004080;
+      margin-bottom: 20px;
+    }
+
+    form input, form select, form textarea, form button {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    form input[readonly] {
+      background-color: #f0f0f0;
+    }
+
+    form button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background-color: #0056b3;
+    }
+
+    footer {
+      background-color: #004080;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-container">
+    <img src="d.jpg" alt="Dream Diagnostics Logo" class="logo">
+    <h1>Dream Diagnostic Centre</h1>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="packages.html">Health Packages</a>
+    <a href="services.html">Our Services</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="appointment.html">Book Appointment</a>
+  </nav>
+</header>
+
+<div class="container">
+  <h2>Book an Appointment</h2>
+  <form id="appointmentForm" action="https://formspree.io/f/manjkzqy" method="POST">
+    <input type="text" id="package" name="package" placeholder="Selected Package" readonly />
+    <input type="text" id="name" name="name" placeholder="Name" required />
+    <input type="email" id="email" name="email" placeholder="Email Address" required />
+    <input type="tel" id="phone" name="phone" placeholder="Phone Number" required />
+
+    <select id="appointment" name="appointment" required>
+      <option value="" disabled selected>Please select an appointment</option>
+      <option value="Clinical Laboratory">Clinical Laboratory</option>
+      <option value="Blood Pressure(BP)">Blood Pressure(BP)</option>
+    
+      <option value="ECG">ECG</option>
+      <option value="BMI(Body mass index)">BMI(Body mass index)</option>
+      <option value="Height">Height</option>
+      <option value="Weight">Weight</option>
+    </select>
+
+    <textarea id="message" name="message" placeholder="Message (Optional)"></textarea>
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+<footer>
+  <p>&copy; Dream Diagnostic Centre | Karkala</p>
+</footer>
+
+<!-- Autofill and WhatsApp Script -->
+<script>
+  // Autofill package name from URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const packageName = urlParams.get('package');
+  if (packageName) {
+    document.getElementById('package').value = decodeURIComponent(packageName);
+  }
+
+  // Handle form submit to trigger WhatsApp message
+  document.getElementById('appointmentForm').addEventListener('submit', function (e) {
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const appointment = document.getElementById('appointment').value;
+    const message = document.getElementById('message').value.trim();
+    const pkg = document.getElementById('package').value.trim();
+
+    const adminNumber = "8217797657"; // WhatsApp for booking notifications
+    const confirmMessage = `✅ Your appointment at Dream Diagnostics Centre is confirmed!\nThank you, ${name}.`;
+
+    const userConfirmLink = `https://wa.me/91${phone}?text=${encodeURIComponent(confirmMessage)}`;
+    const fullMessage = 
+`📥 *New Appointment Booking*
+👤 Name: ${name}
+📧 Email: ${email}
+📞 Phone: ${phone}
+📦 Package: ${pkg || "N/A"}
+🗓️ Appointment For: ${appointment}
+📝 Message: ${message || "N/A"}
+
+✅ Confirm for user: ${userConfirmLink}`;
+
+    // Open WhatsApp to send details to admin
+    window.open(`https://wa.me/${adminNumber}?text=${encodeURIComponent(fullMessage)}`, '_blank');
+    // Allow Formspree to still submit the form (no preventDefault)
+  });
+
+  // Autofill appointment type from URL parameter
+const serviceParam = new URLSearchParams(window.location.search).get('service');
+if (serviceParam) {
+  const appointmentDropdown = document.getElementById('appointment');
+  for (let option of appointmentDropdown.options) {
+    if (option.value.toLowerCase() === serviceParam.toLowerCase()) {
+      option.selected = true;
+      break;
+    }
+  }
+}
+
+</script>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/918217797657" target="_blank" style="
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;">
+  <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp" style="
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+</a>
+
+
+</body>
+</html>

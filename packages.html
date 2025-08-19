@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Health Packages - Dream Diagnostics Center</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+   
+
+header {
+  background-color: #004080;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo-title {
+  display: flex;
+  align-items: center;
+}
+
+.logo-title img {
+  height: 100px;
+  margin-right: 15px;
+}
+
+.logo-title h1 {
+  font-size: 26px;
+  margin: 0;
+  color: white;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  color: white;
+  margin: 0 12px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+
+
+h1 {
+  text-align: center;
+  color: #004080;
+  margin-bottom: 30px;
+}
+
+.packages-section {
+  padding: 60px 20px;
+  background: #fdf6fa;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.package-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.package-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  padding: 20px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease-in-out;
+}
+
+
+.package-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.package-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  object-fit: cover;
+  max-height: 160px;
+}
+
+.package-card h3 {
+  font-size: 20px;
+  color: #004080; /* Changed from purple to blue */
+  margin-bottom: 15px;
+}
+
+.package-card ul {
+  list-style: none;
+  text-align: left;
+  padding-left: 0;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.package-card ul li {
+  margin-bottom: 5px;
+  color: #444;
+}
+
+.package-card .btn {
+  background-color: #004080; /* Primary blue */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  display: inline-block;
+  transition: background 0.3s ease;
+}
+
+.package-card .btn:hover {
+  background-color: #002a5c; /* Slightly darker blue for hover */
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  flex: 1;
+}
+
+ /* --- footer --- */
+    footer{background:#000;color:#fff;text-align:center;padding:40px 20px;margin-top:40px}
+    footer a{color:#fff;text-decoration:none}
+    footer img{height:80px;margin-bottom:15px}
+
+    /* --- prominent BOOK NOW button in header --- */
+    .book-now{display:inline-block;padding:12px 26px;font-size:18px;border-radius:8px;font-weight:bold;color:#fff;background:#ff6600;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,.25);animation:pulse 2s infinite ease-in-out;transition:transform .3s,box-shadow .3s}
+    .book-now:hover{transform:scale(1.05);box-shadow:0 6px 15px rgba(0,0,0,.35)}
+
+    @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.08)}100%{transform:scale(1)}}
+
+
+.package-card ul {
+  list-style: none;
+  padding-left: 20px;
+}
+
+.package-card li::before {
+  content: "•";
+  color: #004080;   /* Change color if needed */
+  font-size: 18px;
+  margin-right: 8px;
+}
+
+
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-title">
+      <img src="d.jpg" alt="Dream Diagnostics Logo" /> 
+      <h1 style="color: #f7f7f7;">Dream Diagnostic Centre</h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="packages.html">Health Packages</a>
+      <a href="services.html">Our Services</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+    <!-- Prominent BOOK NOW / APPOINTMENT button -->
+    <a href="appointment.html" class="book-now">Book&nbsp;Now</a>
+  </header>
+
+  <div class="container">
+    <h1>Our Health Packages</h1>
+    
+
+      <section class="packages-section">
+  
+  <div class="package-grid">
+
+    <div class="package-card">
+  <img src="dai.jpg" alt="Diabetic Profile">
+  <h3>DIABETIC PROFILE (5 TESTS) </h3>
+  <ul>
+    <li>FASTING BLOOD SUGAR (FBS)</li>
+    <li>HbA1c (GLYCOSYLATED HAEMOGLOBIN)</li>
+    <li>RENAL FUNCTION TEST (RFT)</li>
+    <li>POST PRANDIAL BLOOD SUGAR (PPBS)</li>
+  </ul>
+  <a href="appointment.html?package=Diabetic+Profile" class="btn">Book Now</a>
+</div>
+<div class="package-card">
+  <img src="bone.jpg" alt="Bone Health Profile">
+  <h3>BONE HEALTH PROFILE (5 TESTS) </h3>
+  <ul>
+    <li>ALKALINE PHOSPHATASE (ALP)</li>
+    <li>SERUM ALBUMIN</li>
+    <li>SERUM CALCIUM</li>
+    <li>SERUM PHOSPHORUS</li>
+    <li>VITAMIN D3</li>
+  </ul>
+  <a href="appointment.html?package=Bone+Health+Profile" class="btn">Book Now</a>
+</div>
+<div class="package-card">
+  <img src="allergy.jpg" alt="Allergy Profile">
+  <h3>ALLERGY PROFILE (20 TESTS) </h3>
+  <ul>
+    <li>ABSOLUTE EOSINOPHIL COUNT (AEC)</li>
+    <li>COMPLETE BLOOD COUNT WITH ESR (CBC WITH ESR)</li>
+    <li>IgE LEVEL</li>
+  </ul>
+  <a href="appointment.html?package=Allergy+Profile" class="btn">Book Now</a>
+</div>
+<div class="package-card">
+  <img src="an.jpg" alt="Anaemia Profile">
+  <h3>ANAEMIA PROFILE (25 TESTS) </h3>
+  <ul>
+    <li>IRON</li>
+    <li>SERUM FERRITIN</li>
+    <li>TOTAL IRON BINDING CAPACITY (TIBC)</li>
+    <li>TRANSFERRIN SATURATION</li>
+    <li>COMPLETE BLOOD COUNT (CBC)</li>
+    <li>PERIPHERAL SMEAR</li>
+  </ul>
+  <a href="appointment.html?package=Anaemia+Profile" class="btn">Book Now</a>
+</div>
+<div class="package-card">
+  <img src="mini.jpg" alt="Mini Health Package">
+  <h3>MINI HEALTH PACKAGE (61 TESTS)</h3>
+  <ul>
+    <li>BLOOD UREA NITROGEN (BUN)</li>
+    <li>ESTIMATED GLOMERULAR FILTRATION RATE (eGFR)</li>
+    <li>FASTING BLOOD SUGAR (FBS)</li>
+    <li>LIPID PROFILE TEST (LPT)</li>
+    <li>RENAL FUNCTION TEST (RFT)</li>
+    <li>COMPLETE URINE ANALYSIS</li>
+    <li>COMPLETE BLOOD COUNT (CBC)</li>
+  </ul>
+  <a href="appointment.html?package=Mini+Health+Package" class="btn">Book Now</a>
+</div>
+
+<div class="package-card">
+  <img src="kidney.jpg" alt="Kidney Health Profile">
+  <h3>KIDNEY HEALTH PROFILE (9 TESTS) </h3>
+  <ul>
+    <li>BLOOD UREA</li>
+    <li>BLOOD UREA NITROGEN (BUN)</li>
+    <li>ESTIMATED GLOMERULAR FILTRATION RATE (eGFR)</li>
+    <li>SERUM CALCIUM</li>
+    <li>SERUM CREATININE</li>
+    <li>SERUM PHOSPHORUS</li>
+    <li>SERUM POTASSIUM (K+)</li>
+    <li>SERUM SODIUM (NA+)</li>
+    <li>SERUM URIC ACID</li>
+  </ul>
+  <a href="appointment.html?package=Kidney+Health+Profile" class="btn">Book Now</a>
+</div>
+<div class="package-card">
+  <img src="fev.jpg" alt="Fever Profile">
+  <h3>FEVER PROFILE (36 TESTS) </h3>
+  <ul>
+    <li>URINE ROUTINE</li>
+    <li>COMPLETE BLOOD COUNT WITH ESR (CBC WITH ESR)</li>
+    <li>DENGUE PROFILE (IgG, IgM & Ns1Ag)</li>
+    <li>MALARIAL PARASITE (CARD TEST)</li>
+    <li>C-REACTIVE PROTEIN (CRP)</li>
+    <li>WIDAL SLIDE</li>
+  </ul>
+  <a href="appointment.html?package=Fever+Profile" class="btn">Book Now</a>
+</div>
+<div class="package-card">
+  <img src="joint.jpg" alt="Joint Health Profile">
+  <h3>JOINT HEALTH PROFILE (7 TESTS) </h3>
+  <ul>
+    <li>RHEUMATOID FACTOR (RA)</li>
+    <li>SERUM CALCIUM</li>
+    <li>SERUM PHOSPHORUS</li>
+    <li>SERUM URIC ACID</li>
+    <li>VITAMIN D3</li>
+    <li>ASO TITRE (ASLO)</li>
+    <li>C-REACTIVE PROTEIN (CRP)</li>
+  </ul>
+  <a href="appointment.html?package=Joint+Health+Profile" class="btn">Book Now</a>
+</div>
+<div class="package-card">
+  <img src="car.jpg" alt="Cardiac Profile">
+  <h3>CARDIAC PROFILE (6 TESTS) </h3>
+  <ul>
+    <li>ASPARTATE AMINOTRANSFERASE (SGOT/AST)</li>
+    <li>CPK (CK NAK)</li>
+    <li>CPK-MB</li>
+    <li>LDH</li>
+    <li>BP (BLOOD PRESSURE)</li>
+    <li>ECG (ELECTROCARDIOGRAM)</li>
+  </ul>
+  <a href="appointment.html?package=Cardiac+Profile" class="btn">Book Now</a>
+</div>
+
+<div class="package-card">
+  <img src="bas.jpg" alt="Basic Health Package">
+  <h3>BASIC HEALTH PACKAGE (79 TESTS) </h3>
+  <ul>
+    <li>BLOOD UREA NITROGEN (BUN)</li>
+    <li>ESTIMATED GLOMERULAR FILTRATION RATE (eGFR)</li>
+    <li>FASTING BLOOD SUGAR (FBS)</li>
+    <li>HbA1c (GLYCOSYLATED HAEMOGLOBIN)</li>
+    <li>LIPID PROFILE TEST (LPT)</li>
+    <li>LIVER FUNCTION TEST (LFT)</li>
+    <li>RENAL FUNCTION TEST (RFT)</li>
+    <li>SERUM CALCIUM</li>
+    <li>SERUM ELECTROLYTES</li>
+    <li>SERUM PHOSPHORUS</li>
+    <li>COMPLETE URINE ANALYSIS</li>
+    <li>COMPLETE BLOOD COUNT (CBC)</li>
+  </ul>
+  <a href="appointment.html?package=Basic+Health+Package" class="btn">Book Now</a>
+</div>
+<div class="package-card">
+  <img src="senior.jpg" alt="Senior Citizen Health Package">
+  <h3>SENIOR CITIZEN HEALTH PACKAGE </h3>
+  <ul>
+    <li>FASTING BLOOD SUGAR (FBS)</li>
+    <li>HbA1c (GLYCOSYLATED HAEMOGLOBIN)</li>
+    <li>LIPID PROFILE TEST (LPT)</li>
+    <li>LIVER FUNCTION TEST (LFT)</li>
+    <li>RENAL FUNCTION TEST (RFT)</li>
+    <li>SERUM CALCIUM</li>
+    <li>SERUM POTASSIUM (K+)</li>
+    <li>SERUM SODIUM (Na+)</li>
+    <li>BP (BLOOD PRESSURE)</li>
+    <li>ECG (ELECTROCARDIOGRAM)</li>
+    <li>COMPLETE URINE ANALYSIS</li>
+    <li>COMPLETE BLOOD COUNT (CBC)</li>
+    <li>TSH</li>
+  </ul>
+  <a href="appointment.html?package=Senior+Citizen+Health+Package" class="btn">Book Now</a>
+</div>
+
+<div class="package-card">
+  <img src="anc.jpg" alt="ANC Profile">
+  <h3>ANC PROFILE (19 TESTS) </h3>
+  <ul>
+    <li>RANDOM BLOOD SUGAR (RBS)</li>
+    <li>URINE ROUTINE</li>
+    <li>BLEEDING TIME (BT)</li>
+    <li>CLOTTING TIME (CT)</li>
+    <li>BLOOD GROUP & RH TYPE</li>
+    <li>HAEMOGLOBIN (Hb)</li>
+    <li>PLATELET COUNT</li>
+    <li>TSH</li>
+    <li>HCV (CARD TEST)</li>
+    <li>HEPATITIS B SURFACE ANTIGEN (HBsAg) (CARD)</li>
+    <li>HIV 1 & 2 (CARD)</li>
+    <li>VDRL (CARD)</li>
+  </ul>
+  <a href="appointment.html?package=ANC+Profile" class="btn">Book Now</a>
+</div>
+<div class="package-card">
+  <img src="reg.jpg" alt="Regular Health Package">
+  <h3>REGULAR HEALTH PACKAGE (87 TESTS) </h3>
+  <ul>
+    <li>BLOOD UREA NITROGEN (BUN)</li>
+    <li>ESTIMATED GLOMERULAR FILTRATION RATE (eGFR)</li>
+    <li>FASTING BLOOD SUGAR (FBS)</li>
+    <li>HbA1c (GLYCOSYLATED HAEMOGLOBIN)</li>
+    <li>IRON PROFILE</li>
+    <li>LIPID PROFILE TEST (LPT)</li>
+    <li>LIVER FUNCTION TEST (LFT)</li>
+    <li>RENAL FUNCTION TEST (RFT)</li>
+    <li>SERUM CALCIUM</li>
+    <li>SERUM ELECTROLYTES</li>
+    <li>SERUM PHOSPHORUS</li>
+    <li>COMPLETE URINE ANALYSIS</li>
+    <li>COMPLETE BLOOD COUNT (CBC)</li>
+    <li>CA - 125</li>
+    <li>PSA</li>
+    <li>THYROID PROFILE (T3, T4, TSH)</li>
+  </ul>
+  <a href="appointment.html?package=Regular+Health+Package" class="btn">Book Now</a>
+</div>
+
+
+<div class="package-card">
+  <img src="exe.jpg" alt="Executive Health Package">
+  <h3>EXECUTIVE HEALTH PACKAGE (89 TESTS) </h3>
+  <ul>
+    <li>BLOOD UREA NITROGEN (BUN)</li>
+    <li>ESTIMATED GLOMERULAR FILTRATION RATE (eGFR)</li>
+    <li>FASTING BLOOD SUGAR (FBS)</li>
+    <li>HbA1c (GLYCOSYLATED HAEMOGLOBIN)</li>
+    <li>IRON PROFILE</li>
+    <li>LIPID PROFILE TEST (LPT)</li>
+    <li>LIVER FUNCTION TEST (LFT)</li>
+    <li>RENAL FUNCION TEST (RFT)</li>
+    <li>SERUM CALCIUM</li>
+    <li>SERUM ELECTROLYTES</li>
+    <li>SERUM PHOSPHORUS</li>
+    <li>COMPLETE URINE ANALYSIS</li>
+    <li>COMPLETE BLOOD COUNT (CBC)</li>
+    <li>CA-125</li>
+    <li>PSA</li>
+    <li>THYROID PROFILE (T3, T4, TSH)</li>
+    <li>VITAMIN B-12</li>
+    <li>VITAMIN D3</li>
+  </ul>
+  <a href="appointment.html?package=Executive+Health+Package" class="btn">Book Now</a>
+</div>
+
+<div class="package-card">
+  <img src="com.jpg" alt="Comprehensive Health Package">
+  <h3>COMPREHENSIVE HEALTH PACKAGE (96 TESTS) </h3>
+  <ul>
+    <li>BLOOD UREA NITROGEN (BUN)</li>
+    <li>ESTIMATED GLOMERULAR FILTRATION RATE (eGFR)</li>
+    <li>FASTING BLOOD SUGAR (FBS)</li>
+    <li>HbA1c (GLYCOSYLATED HAEMOGLOBIN)</li>
+    <li>IRON PROFILE</li>
+    <li>LIPASE</li>
+    <li>LIPID PROFILE TEST (LPT)</li>
+    <li>LIVER FUNCTION TEST (LFT)</li>
+    <li>RENAL FUNCTION TEST (RFT)</li>
+    <li>SERUM AMYLASE</li>
+    <li>SERUM CALCIUM</li>
+    <li>SERUM ELECTROLYTES</li>
+    <li>SERUM PHOSPHORUS</li>
+    <li>COMPLETE URINE ANALYSIS</li>
+    <li>COMPLETE BLOOD COUNT (CBC)</li>
+    <li>HIGH SENSITIVE CRP (hsCRP)</li>
+    <li>CA - 125</li>
+    <li>PSA</li>
+    <li>THYROID PROFILE (T3, T4, TSH)</li>
+    <li>VITAMIN B-12</li>
+    <li>VITAMIN D3</li>
+    <li>APOLIPOPROTEIN-A1 (APO-A1)</li>
+    <li>APOLIPOPROTEIN-B (APO-B)</li>
+    <li>LIPOPROTEIN-A (Lp-a)</li>
+  </ul>
+  <a href="appointment.html?package=Comprehensive+Health+Package" class="btn">Book Now</a>
+</div>
+<div class="package-card">
+  <img src="women.jpg" alt="Women Health Care Package">
+  <h3>WOMEN HEALTH CARE PACKAGE </h3>
+  <ul>
+    <li>FASTING BLOOD SUGAR (FBS)</li>
+    <li>HbA1c (GLYCOSYLATED HAEMOGLOBIN)</li>
+    <li>LIPID PROFILE TEST (LPT)</li>
+    <li>LIVER FUNCTION TEST (LFT)</li>
+    <li>RENAL FUNCTION TEST (RFT)</li>
+    <li>SERUM CALCIUM</li>
+    <li>BP (BLOOD PRESSURE)</li>
+    <li>ECG (ELECTROCARDIOGRAM)</li>
+    <li>COMPLETE URINE ANALYSIS</li>
+    <li>COMPLETE BLOOD COUNT (CBC)</li>
+    <li>CA-125</li>
+    <li>THYROID PROFILE (T3, T4, TSH)</li>
+  </ul>
+  <a href="appointment.html?package=Women+Health+Care+Package" class="btn">Book Now</a>
+</div>
+
+
+    
+
+    <!-- Add the rest of the packages in the same pattern -->
+
+  </div>
+  </div>
+</section>
+    
+<!-- ============================ FOOTER ============================ -->
+  <footer>
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;max-width:1200px;margin:auto">
+      <!-- left -->
+      <div style="flex:1;min-width:250px;margin-bottom:20px">
+        <img src="d.jpg" alt="Dream Diagnostics Logo">
+        <p style="color: #f7f7f7;"> Dream Diagnostic Centre is a modern healthcare diagnostics center providing quality and affordable services in Karkala. Our mission is to ensure timely, reliable and accurate diagnosis for everyone.</p>
+      </div>
+      <!-- middle -->
+      <div style="flex:1;min-width:150px;margin-bottom:20px">
+        <h3 style="margin-bottom:15px">Explore</h3>
+        <p><a href="index.html">Home</a></p>
+        <p><a href="#about">About Us</a></p>
+        <p><a href="services.html">Our Services</a></p>
+        <p><a href="contact.html">Contact Us</a></p>
+      </div>
+      <!-- right -->
+      <div style="flex:1;min-width:250px;margin-bottom:20px">
+        <h3 style="margin-bottom:15px">Get in Touch</h3>
+        <p>📞 <a href="tel:+918258200369">08258-200369</a> / <a href="tel:+918217797657">+91‑8217797657</a></p>
+
+
+        <p>📧 <a href="mailto:ddckarkala25@gmail.com">ddckarkala25@gmail.com</a></p>
+        <p style="color: white;">📍Karkala Inn,<br> Pulkeri Bypass Circle, Karkala 574114</p>
+        <div style="margin-top:20px">
+          <a href="https://www.instagram.com/_dreamdiagnosticcentre" target="_blank">
+            <img src="https://img.icons8.com/ios-glyphs/30/ffffff/instagram-new.png" alt="Instagram" style="background:#a64ca6;padding:10px;border-radius:8px">
+          </a>
+        </div>
+      </div>
+    </div>
+    <hr style="border:0.5px solid #663399;max-width:1200px;margin:30px auto">
+    <p>&copy;  Dream Diagnostic Centre </p>
+    <p><a href="#">Privacy Policy</a> | <a href="#">Terms and Conditions</a></p>
+  </footer>
+
+  
+  
+<a href="https://wa.me/918217797657" target="_blank" style="
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+">
+  <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp" style="
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  ">
+</a>
+<script>
+  const cards = document.querySelectorAll('.package-card');
+
+  const revealOnScroll = () => {
+    const triggerBottom = window.innerHeight * 0.85;
+    cards.forEach(card => {
+      const boxTop = card.getBoundingClientRect().top;
+      if (boxTop < triggerBottom) {
+        card.classList.add('show');
+      } else {
+        card.classList.remove('show');
+      }
+    });
+  };
+
+  window.addEventListener('scroll', revealOnScroll);
+  window.addEventListener('load', revealOnScroll);
+</script>
+
+
+
+</body>
+</html>
