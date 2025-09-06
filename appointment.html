@@ -120,19 +120,26 @@
     <input type="tel" id="phone" name="phone" placeholder="Phone Number" required />
 
     <select id="appointment" name="appointment" required>
-  <option value="">--Select an option--</option>
-  <option value="Clinical Laboratory">Clinical Laboratory</option>
-  <option value="Blood Pressure (BP)">Blood Pressure (BP)</option>
-  <option value="BMI (Body mass index)">BMI (Body mass index)</option>
-  <option value="Diabetes (RBS, FBS, HbA1c)">Diabetes (RBS, FBS, HbA1c)</option>
-  <option value="Lipid Profile">Lipid Profile</option>
-  <option value="Liver Function Test (LFT)">Liver Function Test (LFT)</option>
-  <option value="Kidney Function Test (KFT)">Kidney Function Test (KFT)</option>
-  <option value="Thyroid Function Test (TFT)">Thyroid Function Test (TFT)</option>
-  <option value="Electrocardiogram (ECG)">Electrocardiogram (ECG)</option>
-  <option value="Ultrasound (USG)">Ultrasound (USG)</option>
-</select>
+      <option value="">--Select an option--</option>
+      <option value="Clinical Laboratory">Clinical Laboratory</option>
+      <option value="Blood Pressure (BP)">Blood Pressure (BP)</option>
+      <option value="BMI (Body mass index)">BMI (Body mass index)</option>
+      <option value="Diabetes (RBS, FBS, HbA1c)">Diabetes (RBS, FBS, HbA1c)</option>
+      <option value="Lipid Profile">Lipid Profile</option>
+      <option value="Liver Function Test (LFT)">Liver Function Test (LFT)</option>
+      <option value="Kidney Function Test (KFT)">Kidney Function Test (KFT)</option>
+      <option value="Thyroid Function Test (TFT)">Thyroid Function Test (TFT)</option>
+      <option value="Electrocardiogram (ECG)">Electrocardiogram (ECG)</option>
+      <option value="Ultrasound (USG)">Ultrasound (USG)</option>
+    </select>
 
+    <label for="date">Select Date:</label>
+    <input type="date" id="date" name="date" required />
+
+    <label for="time">Select Time Slot:</label>
+    <select id="time" name="time" required>
+      <option value="">--Choose a time slot--</option>
+    </select>
 
     <textarea id="message" name="message" placeholder="Message (Optional)"></textarea>
     <button type="submit">Submit</button>
@@ -143,7 +150,7 @@
   <p>&copy; Dream Diagnostic Centre | Karkala</p>
 </footer>
 
-<!-- Autofill and WhatsApp Script -->
+<!-- Scripts -->
 <script>
   // Autofill package name from URL
   const urlParams = new URLSearchParams(window.location.search);
@@ -152,12 +159,53 @@
     document.getElementById('package').value = decodeURIComponent(packageName);
   }
 
+  // Generate slots
+  function generateTimeSlots(startHour, endHour) {
+    let slots = [];
+    for (let hour = startHour; hour < endHour; hour++) {
+      const start = new Date(0, 0, 0, hour, 0);
+      const end = new Date(0, 0, 0, hour + 1, 0);
+      const format = (d) => 
+        d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      slots.push(`${format(start)} - ${format(end)}`);
+    }
+    return slots;
+  }
+
+  // Update time slots based on date
+  const dateInput = document.getElementById("date");
+  const timeSelect = document.getElementById("time");
+
+  function updateTimeSlots() {
+    timeSelect.innerHTML = '<option value="">--Choose a time slot--</option>';
+    const selectedDate = new Date(dateInput.value);
+    if (!selectedDate || isNaN(selectedDate)) return;
+
+    let slots;
+    if (selectedDate.getDay() === 0) {
+      slots = generateTimeSlots(7, 13); // Sunday: 7AM – 1PM
+    } else {
+      slots = generateTimeSlots(7, 19); // Mon–Sat: 7AM – 7PM
+    }
+
+    slots.forEach(slot => {
+      const option = document.createElement("option");
+      option.value = slot;
+      option.textContent = slot;
+      timeSelect.appendChild(option);
+    });
+  }
+
+  dateInput.addEventListener("change", updateTimeSlots);
+
   // Handle form submit to trigger WhatsApp message
   document.getElementById('appointmentForm').addEventListener('submit', function (e) {
     const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
     const phone = document.getElementById('phone').value.trim();
     const appointment = document.getElementById('appointment').value;
+    const date = document.getElementById('date').value;
+    const time = document.getElementById('time').value;
     const message = document.getElementById('message').value.trim();
     const pkg = document.getElementById('package').value.trim();
 
@@ -172,27 +220,26 @@
 📞 Phone: ${phone}
 📦 Package: ${pkg || "N/A"}
 🗓️ Appointment For: ${appointment}
+📅 Date: ${date}
+⏰ Time: ${time}
 📝 Message: ${message || "N/A"}
 
 ✅ Confirm for user: ${userConfirmLink}`;
 
-    // Open WhatsApp to send details to admin
     window.open(`https://wa.me/${adminNumber}?text=${encodeURIComponent(fullMessage)}`, '_blank');
-    // Allow Formspree to still submit the form (no preventDefault)
   });
 
-  // Autofill appointment type from URL parameter
-const serviceParam = new URLSearchParams(window.location.search).get('service');
-if (serviceParam) {
-  const appointmentDropdown = document.getElementById('appointment');
-  for (let option of appointmentDropdown.options) {
-    if (option.value.toLowerCase() === serviceParam.toLowerCase()) {
-      option.selected = true;
-      break;
+  // Autofill appointment type from URL
+  const serviceParam = urlParams.get('service');
+  if (serviceParam) {
+    const appointmentDropdown = document.getElementById('appointment');
+    for (let option of appointmentDropdown.options) {
+      if (option.value.toLowerCase() === serviceParam.toLowerCase()) {
+        option.selected = true;
+        break;
+      }
     }
   }
-}
-
 </script>
 
 <!-- WhatsApp Floating Button -->
@@ -207,7 +254,6 @@ if (serviceParam) {
     border-radius: 50%;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
 </a>
-
 
 </body>
 </html>
